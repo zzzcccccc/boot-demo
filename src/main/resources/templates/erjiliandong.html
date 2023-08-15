@@ -1,0 +1,63 @@
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<form name="form1" action="" method="get">
+    <select id="province" onChange="set_city(this, this.form.city);">
+        <option value="0">选择类型</option>
+        <option value="1">处分</option>
+        <option value="2">处置</option>
+    </select>
+    <select  name="city" id="citys" onchange="func1();">
+        <option value="0">选择详情</option>
+    </select>
+</form>
+</body>
+<script type="text/javascript"
+        src="${KMSS_Parameter_ResPath}bootstrap/js/bootstrap.min.js?s_cache=${LUI_Cache}"></script>
+<script type="text/javascript"
+        src="${KMSS_Parameter_ResPath}js/iframeResizer/iframeResizer.contentWindow.min.js?s_cache=${LUI_Cache}"></script>
+<script type="text/javascript" src="${KMSS_Parameter_ResPath}js/common.js?s_cache=${LUI_Cache}"></script>
+<script>
+    cities = new Object();
+    cities['1']=new Array('警告', '严重警告', '撤销党内职务', '留党察看', '开除党籍');
+    cities['2']=new Array('限期改正', '劝而不退除名', '退党除名', '自行脱党除名');
+    function set_city(province, city) {
+
+        var pro=$("#province option:selected"); //获取选中的项
+        console.log(pro.text());
+        console.log(pro.val());
+        var pv, cv;
+        var i, ii;
+        pv=province.value;
+        cv=city.value;
+        city.length=1;
+        if(pv=='0') return;
+        if(typeof(cities[pv])=='undefined') return;
+        for(i=0; i<cities[pv].length; i++){
+            ii = i+1;
+            city.options[ii] = new Option();
+            city.options[ii].text = cities[pv][i];
+            city.options[ii].value =i+1;
+        }
+    }
+    function func1(){
+        var cityText=$("#citys option:selected"); //获取选中的项
+        console.log(cityText.text());
+        console.log(cityText.val());
+    }
+</script>
+
+<!--<body>-->
+<!--<select id="province" onchange="func1()">-->
+<!--    <option value="shandong">山东</option>-->
+<!--    <option value="hebei">河北</option>-->
+<!--    <option value="beijing">北京</option>-->
+<!--</select>-->
+<!--</body>-->
+<!--<script>-->
+<!--    function func1(){-->
+<!--        var pro = document.getElementById("province");-->
+<!--        console.log(pro.value)-->
+<!--    }-->
+<!--</script>-->
