@@ -1,3 +1,4 @@
+/*
 package cn.study.util;
 
 import cn.hutool.core.collection.CollectionUtil;
@@ -11,16 +12,19 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.Collection;
 
+*/
 /**
  * @author T016071
  * @data 2023/08/09
  * excel导出
- */
+ *//*
+
 public class ExcelUtil {
 
     static Logger logger = LoggerFactory.getLogger(ExcelUtil.class);
 
-    /**
+    */
+/**
      * 生成Excel
      *
      * @param response
@@ -28,7 +32,8 @@ public class ExcelUtil {
      * @param list     接口返回的数据，要导出的list
      * @param cla      excel模板（list对应的类）
      * @param <U>
-     */
+     *//*
+
     public static <U> RES exportExcel(HttpServletResponse response, String name, Object list, Class<U> cla) {
         try {
             if (CollectionUtil.isEmpty((Collection<?>) list)) {
@@ -50,3 +55,4 @@ public class ExcelUtil {
         return RES.ok(CommonConstants.SUCCESS, "success", "导出成功");
     }
 }
+*/

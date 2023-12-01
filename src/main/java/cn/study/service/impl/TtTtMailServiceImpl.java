@@ -1,8 +1,7 @@
 package cn.study.service.impl;
 
 import cn.hutool.core.date.DateUtil;
-import cn.hutool.extra.mail.MailUtil;
-import cn.study.model.ExcelSignpay;
+
 import cn.study.service.TtMailService;
 import cn.study.util.POIUtil;
 import org.apache.commons.io.IOUtils;
